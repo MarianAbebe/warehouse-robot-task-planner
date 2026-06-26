@@ -6,7 +6,7 @@
   <description>TODO: Package description</description>
   <maintainer email="marianabebe006@gmail.com">marianabebe</maintainer>
   <license>MIT</license>
-
+  <depend>visualization_msgs</depend>
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>

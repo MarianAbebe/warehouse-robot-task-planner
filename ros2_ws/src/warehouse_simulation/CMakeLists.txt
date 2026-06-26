@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(visualization_msgs REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -33,6 +34,15 @@ install(TARGETS
 install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME}
+)
+
+add_executable(marker_test_node src/marker_test_node.cpp)
+ament_target_dependencies(marker_test_node rclcpp visualization_msgs)
+
+install(TARGETS
+  marker_test_node
+  simulation_status_node
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()
