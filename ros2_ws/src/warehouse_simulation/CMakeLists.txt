@@ -22,4 +22,12 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+add_executable(simulation_status_node src/simulation_status_node.cpp)
+ament_target_dependencies(simulation_status_node rclcpp)
+
+install(TARGETS
+  simulation_status_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()
